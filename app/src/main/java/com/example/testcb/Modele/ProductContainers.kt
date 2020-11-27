@@ -1,9 +1,7 @@
-package com.example.testcb
+package com.example.testcb.Modele
 
 import android.annotation.SuppressLint
 import java.time.LocalDate
-import java.time.LocalDate.parse
-import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 

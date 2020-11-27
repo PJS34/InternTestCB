@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TestCB+</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="validate">Validate</string>
+    <string name="gtin">GTIN</string>
+    <string name="Title">Welcome to CB+ test app</string>
+    <string name="addText">Add a new GTIN</string>
 </resources>

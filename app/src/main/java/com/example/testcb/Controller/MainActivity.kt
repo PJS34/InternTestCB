@@ -1,4 +1,4 @@
-package com.example.testcb
+package com.example.testcb.Controller
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -10,6 +10,8 @@ import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.testcb.Modele.ProductContainers
+import com.example.testcb.R
 
 
 class MainActivity : AppCompatActivity() {

@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
 
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Controller.MainActivity">
 
     <TextView
         android:id="@+id/textView4"
@@ -16,7 +16,8 @@
         android:gravity="center"
         android:layout_marginTop="75dp"
         android:textSize="32sp"
-        android:text="Welcome to CB+ test app" />
+        android:text="@string/Title"
+        android:textStyle="bold"/>
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -42,6 +43,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
         android:onClick="goToAddPage"
-        android:text="Add a new GTIN" />
-    />
+        android:text="@string/addText" />
+
 </RelativeLayout>
