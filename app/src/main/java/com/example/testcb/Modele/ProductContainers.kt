@@ -4,9 +4,10 @@ import android.annotation.SuppressLint
 import java.time.LocalDate
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
-
+import java.io.Serializable
 @SuppressLint("NewApi")
-class ProductContainers {
+
+public class ProductContainers : Serializable  {
     var ProductMap : HashMap<Int,ArrayList<LocalDate>>
 
     init {
@@ -37,7 +38,24 @@ class ProductContainers {
     }
     fun findShortestDateByGTIN(GTIN:Int) : LocalDate? {
        return ProductMap.get(GTIN)?.min()
-
     }
+
+    fun addnewEntry(GTIN: Int,date : LocalDate?){
+        if (ProductMap.containsKey(GTIN)){
+            if (date != null) {
+                ProductMap[GTIN]?.add(date)
+            }
+        }else{
+            createNewEntry(GTIN,date)
+        }
+    }
+    fun createNewEntry(GTIN: Int,date: LocalDate?){
+        var dateArray : ArrayList<LocalDate> = ArrayList<LocalDate>()
+        if (date != null) {
+            dateArray.add(date)
+        }
+        ProductMap.put(GTIN,dateArray)
+    }
+
 
 }

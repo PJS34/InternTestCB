@@ -16,12 +16,19 @@ import com.example.testcb.R
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("NewApi")
-    val myDatas = ProductContainers()
+    lateinit var myDatas : ProductContainers
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val i = intent
+        if(i.getSerializableExtra("myDatas") == null){
+            myDatas = ProductContainers()
+        }else {
+            myDatas = i.getSerializableExtra("myDatas") as ProductContainers
+        }
         FillTableLayout()
     }
+
     fun FillTableLayout(){
         var table : TableLayout = findViewById(R.id.idTable)
         var row : TableRow //Ligne
@@ -57,6 +64,7 @@ class MainActivity : AppCompatActivity() {
 
     fun goToAddPage(view: View) {
         val intent = Intent(this, addGTIN::class.java)
+        intent.putExtra("myDatas",myDatas)
         startActivity(intent)
     }
 
