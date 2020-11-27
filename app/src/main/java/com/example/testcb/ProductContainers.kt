@@ -29,9 +29,9 @@ class ProductContainers {
             LocalDate.of(2018, 12, 1)
 
         )
-        ProductMap.put(111111,ExpiryDate1)
-        ProductMap.put(222222,ExpiryDate2)
-        ProductMap.put(333333,ExpiryDate3)
+        ProductMap[111111] = ExpiryDate1
+        ProductMap[222222] = ExpiryDate2
+        ProductMap[333333] = ExpiryDate3
     }
 
     fun addProduct(GTIN : Int,ExpiryDates : ArrayList<LocalDate>){

@@ -1,13 +1,16 @@
 package com.example.testcb
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("NewApi")
@@ -28,15 +31,15 @@ class MainActivity : AppCompatActivity() {
 
             //Left cell
             t1 = TextView(this)
-            t1.setText(key.toString())
-            t1.setGravity(Gravity.CENTER)
-            t1.setLayoutParams(TableRow.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1F))
+            t1.text = key.toString()
+            t1.gravity = Gravity.CENTER
+            t1.layoutParams = TableRow.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1F)
 
             //right cell
             t2 = TextView(this)
-            t2.setText(myDatas.findShortestDateByGTIN(key).toString())
-            t2.setGravity(Gravity.CENTER)
-            t2.setLayoutParams(TableRow.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1F))
+            t2.text = myDatas.findShortestDateByGTIN(key).toString()
+            t2.gravity = Gravity.CENTER
+            t2.layoutParams = TableRow.LayoutParams(300, ViewGroup.LayoutParams.WRAP_CONTENT, 1F)
 
             //add cells in a row
             row.addView(t1)
@@ -48,6 +51,11 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun goToAddPage(view: View) {
+        val intent = Intent(this, addGTIN::class.java)
+        startActivity(intent)
     }
 
 
